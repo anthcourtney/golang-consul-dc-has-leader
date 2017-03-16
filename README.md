@@ -5,10 +5,16 @@ Plugin for consul-template which determines whether a datacenter has a cluster l
 ## Build
 
 ```
-$ make
+$ make go
 ```
 
-should result in a ```bin/dc-has-leader```
+should result in a ```bin/dc-has-leader``` binary suitable for glibc OSes.
+
+```
+$ make alpine
+```
+
+should result in a ```bin/alpine/dc-has-leader``` binary suitable for musl libc OSes (i.e. alpine).
 
 ## Example invocation
 
