@@ -12,6 +12,10 @@ const e string = "CONSUL_ADDR"
 func HasLeader(dc string, agent string) bool {
 	url := "http://" + agent + "/v1/catalog/services?dc=" + dc
 	resp, err := http.Get(url)
+	if (err != nil) {
+		return false
+	}
+	defer resp.Body.Close()
 	if (err == nil) && (resp.StatusCode == 200) {
 		return true
 	}
