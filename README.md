@@ -33,3 +33,5 @@ dc: {{ $dc }}
 {{- end -}}
 {{- end -}}
 ```
+
+See https://github.com/anthcourtney/consul-template-dc-failure for an example of using this plugin in a multi-datacenter environment where one of the queried datacenters loses consensus.
